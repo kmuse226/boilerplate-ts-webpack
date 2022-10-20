@@ -24,5 +24,8 @@ module.exports = merge(common, {
     },
     compress: true,
     port: 5000,
+    headers: {
+      "X-Frame-Options": "SAMEORIGIN"
+    },
   },
 });
