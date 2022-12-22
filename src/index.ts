@@ -7,7 +7,7 @@ console.log(_,'lodash')
 class Test {
     private name: string
     constructor() {
-        this.name = 'string'
+        this.name = 'Ellie iiiiiiii'
     }
 
     logName() {
@@ -28,6 +28,7 @@ class interImple implements testInterface {
 const interimpl = new interImple()
 
 console.log(interimpl)
+
 
 const test = new Test()
 test.logName()

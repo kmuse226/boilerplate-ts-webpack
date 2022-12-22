@@ -1,5 +1,5 @@
 module.exports = {
-    entry: '/src/index.ts',
+    entry: ["core-js/stable",'./src/index.ts'],
     output: {
         path: __dirname + '/dist',
         filename: 'js/main.js',
@@ -24,7 +24,7 @@ module.exports = {
             }
           }
         },
-         {
+        {
           test: /\.(tsx|ts)?$/i,
           exclude: /node_modules/,
           use: ['ts-loader']
