@@ -8,6 +8,9 @@
     "start": "npx webpack serve --open --config webpack.dev.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
@@ -22,5 +25,10 @@
   "dependencies": {
     "@types/lodash": "^4.14.191",
     "lodash": "^4.17.21"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
 }

@@ -1,9 +1,7 @@
 import "./styles/index.css"
 import _ from 'lodash'
-
-
-console.log('123123123')
-
+import addOne from "./module"
+console.log(addOne(2),'---------------')
 class Test {
     name
     constructor() {
@@ -17,3 +15,7 @@ class Test {
 
 const test = new Test()
 test.logName()
+
+const func = () => {
+    console.log('arrow function')
+}
