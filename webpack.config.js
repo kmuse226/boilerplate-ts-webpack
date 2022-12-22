@@ -5,7 +5,7 @@ const path = require('path')
 // process.env.NODE_ENV = 'production'
 
 module.exports = {
-    entry: '/src/index.js',
+    entry: '/src/index.ts',
     output: {
         path: __dirname + '/dist',
         filename: 'js/main.js',
