@@ -1,11 +1,13 @@
 import "./styles/index.css"
 import _ from 'lodash'
-import addOne from "./module"
+import addOne from "./module/module"
 console.log(addOne(2),'---------------')
+
+console.log(_,'lodash')
 class Test {
-    name
+    private name: string
     constructor() {
-        this.name = 'john'
+        this.name = 'string'
     }
 
     logName() {
@@ -19,3 +21,4 @@ test.logName()
 const func = () => {
     console.log('arrow function')
 }
+// hi, there

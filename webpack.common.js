@@ -23,6 +23,11 @@ module.exports = {
               presets: ['@babel/preset-env']
             }
           }
+        },
+         {
+          test: /\.(tsx|ts)?$/i,
+          exclude: /node_modules/,
+          use: ['ts-loader']
         }
       ],
     }
