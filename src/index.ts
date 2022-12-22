@@ -15,6 +15,20 @@ class Test {
     }
 }
 
+interface testInterface {
+    log():void;
+    someReturn():string
+}
+
+class interImple implements testInterface {
+    log = () => {}
+    someReturn = () => 'string'
+}
+
+const interimpl = new interImple()
+
+console.log(interimpl)
+
 const test = new Test()
 test.logName()
 
