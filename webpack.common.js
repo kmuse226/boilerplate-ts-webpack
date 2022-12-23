@@ -1,3 +1,22 @@
+
+const path = require('path')
+const dotenv = require('dotenv')
+
+
+dotenv.config({path:path.join(__dirname,'.env')});
+console.log(process.env.ENV_VAR1)
+console.log(process.env.ENV_VAR2)
+console.log(process.env.ENV_VAR3)
+
+// dotenv.config({path:path.join(__dirname,'.env.production')});
+// console.log(process.env.PRODUCT_VAR1)
+// console.log(process.env.PRODUCT_VAR2)
+// console.log(process.env.PRODUCT_VAR3)
+
+console.log(process.env.NODE_ENV,'webpack node key')
+console.log(process.env.NODE_ENV == 'production' ? 'progress build' : 'progress dev')
+
+
 module.exports = {
     entry: ["core-js/stable",'./src/index.ts'],
     output: {
