@@ -37,3 +37,5 @@ const func = () => {
     console.log('arrow function')
 }
 // hi, there
+
+func()

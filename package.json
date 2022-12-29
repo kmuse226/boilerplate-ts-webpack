@@ -4,16 +4,20 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "npx webpack --config webpack.prod.js --node-env production  ",
-    "start": "npx webpack serve --open --config webpack.dev.js --node-env development   "
+    "lint":"eslint ./src",
+    "build": "npx webpack --config webpack.prod.js --node-env production",
+    "start": "npx webpack serve --open --config webpack.dev.js --node-env development"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
     "babel-loader": "^9.1.0",
     "core-js": "^3.26.1",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.3",
+    "eslint": "^8.30.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
