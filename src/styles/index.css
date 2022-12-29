@@ -1,4 +1,105 @@
-* {
+body {
   background-image: url('../assets/background-210125-235634.webp');
+}
+
+.container {
+  position: relative;
+  width: 900px;
+  height: 780px;
+  margin: 0 auto 0 auto;
+}
+
+.header {
+  height: 15%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.header h1 {
+  margin: 0px;
+  text-align: center;
   color: red;
+  height: 55px;
+  line-height: 55px;
+}
+
+.header .add-button-group {
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.header .add-button-group .add-button {
+  width: 85px;
+  height: 35px;
+  color: beige;
+  font-weight: bold;
+  background-color: lightcoral;
+}
+
+.header .add-button-group .add-button:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.main {
+  height: 75%;
+  background-color: gray;
+  opacity: 0.2;
+}
+.footer {
+  height: 10%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.footer h3 {
+  margin: 0;
+  height: 80px;
+  font-weight: lighter;
+  line-height: 80px;
+  text-align: center;
+}
+
+.modal-background {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-background .modal-popup {
+  position: relative;
+  margin: 0 auto 0 auto;
+  width: 500px;
+  height: 200px;
+  background: rgba(40, 40, 40, 0.5);
+  color: burlywood;
+}
+
+.modal-popup .close {
+  text-align: end;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-popup .add {
+  margin-top: 10px;
+  text-align: end;
+}
+
+.modal-popup .title .header {
+  background: rgba(40, 40, 40, 0.8);
+}
+.modal-popup .url .header {
+  background: rgba(40, 40, 40, 0.8);
+}
+
+.modal-popup input {
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 97%;
+  height: 25px;
+  background: rgba(40, 40, 40, 0.8);
+  color: burlywood;
 }
