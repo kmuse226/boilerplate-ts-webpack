@@ -1,41 +1,40 @@
-import "./styles/index.css"
-import _ from 'lodash'
-import addOne from "./module/module"
-console.log(addOne(2),'---------------')
+import './styles/index.css';
+import _ from 'lodash';
+import addOne from './module/module';
+console.log(addOne(2), '---------------');
 
-console.log(_,'lodash')
+console.log(_, 'lodash');
 class Test {
-    private name: string
-    constructor() {
-        this.name = 'Ellie iiiiiiii'
-    }
+  private name: string;
+  constructor() {
+    this.name = 'Ellie iiiiiiii';
+  }
 
-    logName() {
-        console.log(this.name)
-    }
+  logName() {
+    console.log(this.name);
+  }
 }
 
 interface testInterface {
-    log():void;
-    someReturn():string
+  log(): void;
+  someReturn(): string;
 }
 
 class interImple implements testInterface {
-    log = () => {}
-    someReturn = () => 'string'
+  log = () => {};
+  someReturn = () => 'string';
 }
 
-const interimpl = new interImple()
+const interimpl = new interImple();
 
-console.log(interimpl)
+console.log(interimpl);
 
-
-const test = new Test()
-test.logName()
+const test = new Test();
+test.logName();
 
 const func = () => {
-    console.log('arrow function')
-}
+  console.log('arrow function');
+};
 // hi, there
 
-func()
+func();

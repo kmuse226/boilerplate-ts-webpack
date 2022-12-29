@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint":"eslint ./src",
+    "format":"prettier --check ./src",
+    "format:fix":"prettier --write ./src",
+    "lint": "eslint ./src",
     "build": "npx webpack --config webpack.prod.js --node-env production",
     "start": "npx webpack serve --open --config webpack.dev.js --node-env development"
   },
@@ -21,6 +23,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
+    "prettier": "^2.8.1",
     "regenerator-runtime": "^0.13.11",
     "sass-loader": "^13.1.0",
     "style-loader": "^3.3.1",
