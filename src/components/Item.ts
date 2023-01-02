@@ -27,16 +27,16 @@ class Item {
         break;
     }
   }
-  addArticleToDocument() {
+  public addArticleToDocument() {
     const mainArea = document.body.querySelector('.main') as HTMLElement;
     mainArea.appendChild(this.container);
   }
 
-  addDragEvent() {
+  private addDragEvent() {
     this.container.draggable = true;
     this.container.addEventListener('dragstart', this.dragItem);
   }
-  dragItem(ev: DragEvent) {
+  private dragItem(ev: DragEvent) {
     console.log('drag');
     const target = ev.target as HTMLDivElement;
     const targetId = target.dataset.id;
