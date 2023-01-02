@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "format":"prettier --check ./src",
-    "format:fix":"prettier --write ./src",
+    "format": "prettier --check ./src",
+    "format:fix": "prettier --write ./src",
     "lint": "eslint ./src",
     "build": "npx webpack --config webpack.prod.js --node-env production",
     "start": "npx webpack serve --open --config webpack.dev.js --node-env development"
@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "babel-loader": "^9.1.0",
@@ -37,7 +38,8 @@
   "dependencies": {
     "@types/lodash": "^4.14.191",
     "lodash": "^4.17.21",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0"
   },
   "browserslist": [
     "last 3 versions",
