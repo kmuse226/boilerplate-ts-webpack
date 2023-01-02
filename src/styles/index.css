@@ -5,7 +5,7 @@ body {
 .container {
   position: relative;
   width: 900px;
-  height: 780px;
+  height: 820px;
   margin: 0 auto 0 auto;
 }
 
@@ -21,13 +21,13 @@ body {
   line-height: 55px;
 }
 
-.header .add-button-group {
+.header .dialog-button-group {
   height: 45px;
   text-align: center;
   line-height: 45px;
 }
 
-.header .add-button-group .add-button {
+.header .dialog-button-group .dialog-button {
   width: 85px;
   height: 35px;
   color: beige;
@@ -35,16 +35,60 @@ body {
   background-color: lightcoral;
 }
 
-.header .add-button-group .add-button:active {
+.header .dialog-button-group .dialog-button:active {
   box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
     inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .main {
+  padding: 40px 20px;
   height: 75%;
-  background-color: gray;
-  opacity: 0.2;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
 }
+
+.main p {
+  display: inline-block;
+  margin: 0;
+}
+
+.main .image {
+  display: flex;
+  justify-content: space-around;
+  background: orangered;
+  margin-bottom: 15px;
+}
+
+.main .image p {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.main .video {
+  display: flex;
+  justify-content: space-around;
+  background: dodgerblue;
+  margin-bottom: 15px;
+}
+
+.main .video p {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.main .task {
+  cursor: pointer;
+  background: goldenrod;
+  margin-bottom: 15px;
+}
+.main .note {
+  cursor: pointer;
+  background: palevioletred;
+  margin-bottom: 15px;
+}
+
 .footer {
   height: 10%;
   background: rgba(0, 0, 0, 0.5);
@@ -58,8 +102,8 @@ body {
   text-align: center;
 }
 
-.modal-background {
-  display: flex;
+.dialog-background {
+  display: none;
   align-items: center;
   position: absolute;
   top: 0;
@@ -68,38 +112,44 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.modal-background .modal-popup {
+.dialog-background .dialog-container {
   position: relative;
   margin: 0 auto 0 auto;
   width: 500px;
   height: 200px;
-  background: rgba(40, 40, 40, 0.5);
+  background: rgba(40, 40, 40);
   color: burlywood;
 }
 
-.modal-popup .close {
+.dialog-container .close {
   text-align: end;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.modal-popup .add {
+.dialog-container .add {
   margin-top: 10px;
   text-align: end;
 }
 
-.modal-popup .title .header {
-  background: rgba(40, 40, 40, 0.8);
+.dialog-container .title .header {
+  background: rgba(40, 40, 40);
 }
-.modal-popup .url .header {
-  background: rgba(40, 40, 40, 0.8);
+.dialog-container .source .header {
+  background: rgba(40, 40, 40);
 }
 
-.modal-popup input {
+.dialog-container input,
+.dialog-container textarea {
   display: block;
   margin: 0 auto 0 auto;
   width: 97%;
   height: 25px;
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(40, 40, 40);
   color: burlywood;
+}
+
+.dialog-container textarea {
+  resize: none;
+  height: 40px;
 }
