@@ -18,7 +18,7 @@ class DialogMaker {
   }
 
   private makeDialogContainer() {
-    const dialogContainer = document.createElement('div') as HTMLDivElement;
+    const dialogContainer = document.createElement('div');
     dialogContainer.classList.add('dialog-container');
     this.dialogContainer = dialogContainer;
   }
@@ -59,9 +59,9 @@ class DialogMaker {
     this.dialogContainer?.appendChild(dialogInputAreaContainer);
   }
   private makeDialogAddButton() {
-    const addBtnContainer = document.createElement('div') as HTMLDivElement;
+    const addBtnContainer = document.createElement('div');
     addBtnContainer.classList.add('add');
-    const addBtn = document.createElement('button') as HTMLButtonElement;
+    const addBtn = document.createElement('button');
     addBtn.textContent = 'Add';
     addBtnContainer.appendChild(addBtn);
 
@@ -69,9 +69,9 @@ class DialogMaker {
     this.dialogContainer?.appendChild(addBtnContainer);
   }
   private makeDialogCloseButton() {
-    const closeBtnContainer = document.createElement('div') as HTMLDivElement;
+    const closeBtnContainer = document.createElement('div');
     closeBtnContainer.classList.add('close');
-    const closeBtn = document.createElement('button') as HTMLButtonElement;
+    const closeBtn = document.createElement('button');
     closeBtn.textContent = 'Close';
     closeBtnContainer.appendChild(closeBtn);
 
@@ -130,4 +130,4 @@ class DialogMaker {
   }
 }
 
-export { DialogMaker };
+export { DialogMaker, items };

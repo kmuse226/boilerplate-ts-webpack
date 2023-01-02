@@ -2,7 +2,7 @@ import { articleClass, contentType } from '../types/types';
 import { v4 as uuidv4 } from 'uuid';
 
 class Item {
-  protected container: HTMLElement = document.createElement('article');
+  public container: HTMLElement = document.createElement('article');
   private articleClassName: articleClass | undefined;
   constructor(protected title: string, protected contentType: contentType) {
     this.container.dataset.id = uuidv4();

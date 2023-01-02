@@ -10,7 +10,7 @@ class DiaLogButtonMaker {
     this.addDialogButtonToDocument();
   }
   private makeDialogButton(contentType: contentType): void {
-    const btn = document.createElement('button') as HTMLButtonElement;
+    const btn = document.createElement('button');
     btn.classList.add('dialog-button');
     btn.textContent = contentType;
     this.dialogButton = btn;
