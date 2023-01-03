@@ -25,6 +25,10 @@ class Item {
       case 'NOTE':
         this.articleClassName = 'note';
         break;
+      default:
+        // eslint-disable-next-line no-case-declarations
+        const _exhaustiveCheck: never = contentType;
+        return _exhaustiveCheck;
     }
   }
   public addArticleToDocument() {
@@ -52,6 +56,8 @@ class VideoItem extends Item {
   ) {
     super(title, contentType);
     this.makeVideoArticleInnerLayout();
+    this.addVideoContent();
+    this.addTextContent();
     this.addArticleToDocument();
   }
 
@@ -64,6 +70,22 @@ class VideoItem extends Item {
 
     this.container.appendChild(videoContent);
     this.container.appendChild(videoText);
+  }
+
+  addVideoContent() {
+    const frameBox = this.container.querySelector('.video-content');
+    const iframe = document.createElement('iframe');
+    iframe.width = '440';
+    iframe.height = '220';
+    iframe.src = 'http://www.youtube.com/embed/gdZLi9oWNZg';
+    frameBox && frameBox.appendChild(iframe);
+  }
+  addTextContent() {
+    const textBox = this.container.querySelector('.video-text');
+
+    if (textBox) {
+      textBox.textContent = `orem, ipsum dolor sit amet consectetur  Venia`;
+    }
   }
 }
 

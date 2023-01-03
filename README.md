@@ -20,3 +20,14 @@
 
 1. prettier extension 설치
 2. setting > format on Save true
+
+# 에러 핸들링 코드
+
+// fetch('www.example.com').then(console.log); // 에러 발생 코드, fetch catch 하지 않을 시 프로그램 동작에 대해 확인
+
+// try {
+// throw new Error('handled error');
+// } catch (e) {
+// console.log(e); // program goes on
+// }
+// throw new Error('unhandled error'); // program terminated

@@ -3,34 +3,43 @@ import { DiaLogButtonMaker } from './components/DialogButton';
 import { contentType } from './types/types';
 import { items } from './components/Dialog';
 
-const mainArea = document.body.querySelector('.main') as HTMLElement;
+const mainArea = document.body.querySelector('.main');
+
 const contents: contentType[] = ['IMAGE', 'VIDEO', 'NOTE', 'TASK'];
 contents.forEach((content) => new DiaLogButtonMaker(content));
 
-const drop = (ev: DragEvent) => {
+const drop = (ev: Event) => {
   ev.preventDefault();
-  const currentTarget = ev.target as HTMLElement;
-  const data = ev.dataTransfer?.getData('itemId');
+  if (!(ev.target instanceof HTMLElement) || !(ev instanceof DragEvent)) return;
+  const currentTarget = ev.target;
+  const data = ev instanceof DragEvent && ev.dataTransfer?.getData('itemId');
   const movingItemIndex = items.findIndex(
     (item) => item.container.dataset.id == data,
   );
+
   const targetItemIndex = items.findIndex(
-    (item) => item.container.dataset.id == currentTarget.dataset.id,
+    (item) =>
+      item.container.dataset.id == currentTarget.dataset.id ||
+      item.container.dataset.id == currentTarget.parentElement?.dataset.id,
   );
+
   if (movingItemIndex < 0 || targetItemIndex < 0) return;
 
   const movingItem = items.splice(movingItemIndex, 1)[0];
+
   items.splice(targetItemIndex, 0, movingItem);
   items.forEach((item) => {
-    mainArea.removeChild(item.container);
+    mainArea && mainArea.removeChild(item.container);
     item.addArticleToDocument();
   });
 };
 
-mainArea.addEventListener('drop', drop);
-mainArea.addEventListener('dragenter', (event: Event) => {
-  event.preventDefault();
-});
-mainArea.addEventListener('dragover', (event: Event) => {
-  event.preventDefault();
-});
+mainArea && mainArea.addEventListener('drop', drop);
+mainArea &&
+  mainArea.addEventListener('dragenter', (event: Event) =>
+    event.preventDefault(),
+  );
+mainArea &&
+  mainArea.addEventListener('dragover', (event: Event) =>
+    event.preventDefault(),
+  );
