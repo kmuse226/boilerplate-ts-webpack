@@ -99,7 +99,12 @@ class DialogMaker {
     this.dialogContainer && dialogBackground.removeChild(this.dialogContainer);
     dialogBackground.style.display = 'none';
   }
-  private submitContent(contentType: contentType, title = '', source = '') {
+  static submitContent(
+    contentType: contentType,
+    title = '',
+    source = '',
+    taskDone?: boolean,
+  ) {
     let item: Item;
     switch (contentType) {
       case 'IMAGE':
@@ -109,7 +114,7 @@ class DialogMaker {
         item = new VideoItem(title, source, contentType);
         break;
       case 'TASK':
-        item = new TaskItem(title, source, contentType);
+        item = new TaskItem(title, source, contentType, taskDone);
         break;
       case 'NOTE':
         item = new NoteItem(title, source, contentType);
@@ -119,9 +124,10 @@ class DialogMaker {
     }
     items.push(item);
     console.log(items);
+    localStorage.setItem('items', JSON.stringify(items));
   }
   private handleAddButtonEvent() {
-    this.submitContent(
+    DialogMaker.submitContent(
       this.contentType,
       this.dialogTitleInput?.value,
       this.dialogSourceInput?.value,

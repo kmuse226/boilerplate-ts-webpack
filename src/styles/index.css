@@ -1,3 +1,22 @@
+:root {
+  --bg-main-color: #00000080;
+  --bg-accent-color: #2d2d2d;
+  --accent-color: #f64435;
+  --text-accent-color: #786c4a;
+  --text-edit-bg-color: #57575750;
+  --border-color: #3f3f3f;
+  --shadow-color: #202020;
+  --document-bg-color: #68686850;
+  --component-bg-gradient: radial-gradient(
+    circle,
+    #646464e6 0%,
+    #363636e6 100%
+  );
+  --smokywhite: #dddbd8;
+  --black: #000000;
+  --translucent-black: #00000099;
+}
+
 body {
   background-image: url('../assets/background-210125-235634.webp');
 }
@@ -7,16 +26,17 @@ body {
   width: 900px;
   height: 820px;
   margin: 0 auto 0 auto;
+  background-color: var(--bg-main-color);
 }
 
 .header {
   height: 15%;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--translucent-black);
 }
 .header h1 {
   margin: 0px;
   text-align: center;
-  color: red;
+  color: var(--accent-color);
   height: 55px;
   line-height: 55px;
 }
@@ -32,7 +52,7 @@ body {
   height: 35px;
   color: beige;
   font-weight: bold;
-  background-color: lightcoral;
+  background-color: var(--accent-color);
 }
 
 .header .dialog-button-group .dialog-button:active {
@@ -43,7 +63,7 @@ body {
 .main {
   padding: 40px 20px;
   height: 75%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--text-edit-bg-color);
   overflow: auto;
 }
 
@@ -53,52 +73,75 @@ body {
 }
 
 .main .image {
+  position: relative;
   display: flex;
-  justify-content: space-around;
-  background: orangered;
-  margin-bottom: 15px;
+  justify-content: flex-start;
+  background: var(--component-bg-gradient);
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px var(--shadow-color);
 }
 
 .main .image p {
   display: flex;
-  align-items: center;
+  color: gold;
+}
+
+.main .image-text {
   padding: 10px;
 }
 
 .main .video {
+  position: relative;
   display: flex;
-  justify-content: space-around;
-  background: dodgerblue;
-  margin-bottom: 15px;
+  justify-content: flex-start;
+  background: var(--component-bg-gradient);
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px var(--shadow-color);
 }
 
 .main .video p {
   display: flex;
-  align-items: center;
+  color: gold;
+}
+
+.main .video-text {
   padding: 10px;
 }
 
 .main .task {
+  position: relative;
   cursor: pointer;
-  background: goldenrod;
-  margin-bottom: 15px;
+  background: var(--component-bg-gradient);
+  margin-bottom: 20px;
+  color: gold;
+}
+.main .task p {
+  padding-left: 5px;
+  padding-bottom: 5px;
 }
 .main .note {
+  position: relative;
   cursor: pointer;
-  background: palevioletred;
-  margin-bottom: 15px;
+  background: var(--component-bg-gradient);
+  margin-bottom: 20px;
+  color: gold;
+}
+
+.main .note p {
+  padding-left: 5px;
+  padding-bottom: 5px;
 }
 
 .footer {
-  height: 10%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  height: 8%;
+  background: var(--translucent-black);
+  color: beige;
 }
 .footer h3 {
   margin: 0;
-  height: 80px;
+  height: 60px;
   font-weight: lighter;
-  line-height: 80px;
+  line-height: 60px;
   text-align: center;
 }
 
@@ -152,4 +195,13 @@ body {
 .dialog-container textarea {
   resize: none;
   height: 40px;
+}
+
+.remove {
+  color: var(--accent-color);
+}
+
+.remove:hover {
+  color: purple;
+  cursor: pointer;
 }
