@@ -5,6 +5,10 @@ import { DialogMaker, items } from './components/Dialog';
 
 const mainArea = document.body.querySelector('.main');
 
+// const a = 1;
+const b = 1;
+const a = 1;;;;;;;;;;;;;;;;;
+
 const contents: contentType[] = ['IMAGE', 'VIDEO', 'NOTE', 'TASK'];
 contents.forEach((content) => new DiaLogButtonMaker(content));
 
